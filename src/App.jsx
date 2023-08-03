@@ -19,6 +19,19 @@ function App() {
           typeSpeed={100}
           eraseSpeed={100}
         />
+
+        <TypeWriterEffect
+          textStyle={{
+            color: "#fff",
+            fontWeight: 500,
+            fontSize: "1.5em",
+          }}
+          startDelay={100}
+          cursorColor="white"
+          text=".- / ... .. - . / ..-. --- .-. / - .-. .- -. ... .-.. .- - .. -. --. / - . -..- - / - --- / -- --- .-. ... . / -.-. --- -.. . .-.-.-"
+          typeSpeed={100}
+          eraseSpeed={100}
+        />
       </div>
     </>
   );
