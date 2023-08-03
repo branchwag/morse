@@ -10,7 +10,7 @@ function App() {
         <div className="">
           <button
             onClick={() => setCount((count) => count + 1)}
-            className="text-slate-300"
+            className="text-slate-300 py-2 px-2 border-2 rounded-full"
           >
             count is {count}
           </button>
