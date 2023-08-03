@@ -5,13 +5,16 @@ function App() {
 
   return (
     <>
-      <div className="">
-        <h1 className="text-3xl font-bold underline">Morse</h1>
+      <div className="flex flex-col justify-center items-center w-screen h-screen">
+        <h1 className="text-3xl font-bold text-slate-300">Morse</h1>
         <div className="">
-          <button onClick={() => setCount((count) => count + 1)}>
+          <button
+            onClick={() => setCount((count) => count + 1)}
+            className="text-slate-300"
+          >
             count is {count}
           </button>
-          <p>Test para</p>
+          <p className="text-slate-300">Test para</p>
         </div>
       </div>
     </>
