@@ -1,21 +1,24 @@
-import { useState } from "react";
+// import { useState } from "react";
+import TypeWriterEffect from "react-typewriter-effect";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="flex flex-col justify-center items-center w-screen h-screen">
-        <h1 className="text-3xl font-bold text-slate-300">Morse</h1>
-        <div className="">
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            className="text-slate-300 py-2 px-2 border-2 rounded-full"
-          >
-            count is {count}
-          </button>
-          <p className="text-slate-300">Test para</p>
-        </div>
+        <h1 className="text-3xl font-bold text-white">Morse</h1>
+
+        <TypeWriterEffect
+          textStyle={{
+            color: "#fff",
+            fontWeight: 500,
+            fontSize: "1.5em",
+          }}
+          startDelay={100}
+          cursorColor="white"
+          text="A site for translating text to morse code."
+          typeSpeed={100}
+          eraseSpeed={100}
+        />
       </div>
     </>
   );
