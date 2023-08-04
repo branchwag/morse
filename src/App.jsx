@@ -32,6 +32,10 @@ function App() {
           typeSpeed={100}
           eraseSpeed={100}
         />
+
+        <button className="bg-transparent hover:bg-white-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded mt-3">
+          Begin
+        </button>
       </div>
     </>
   );
