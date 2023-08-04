@@ -4,7 +4,7 @@ import TypeWriterEffect from "react-typewriter-effect";
 function App() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-screen h-screen">
+      <div className="flex flex-col justify-center items-center w-screen h-screen px-8">
         <h1 className="text-3xl font-bold text-white">Morse</h1>
 
         <TypeWriterEffect
