@@ -22,26 +22,28 @@ function App() {
           eraseSpeed={100}
         />
 
-        <TypeWriterEffect
-          textStyle={{
-            color: "#fff",
-            fontWeight: 500,
-            fontSize: "1.5em",
-          }}
-          startDelay={100}
-          cursorColor="white"
-          text=".- / ... .. - . / ..-. --- .-. / - .-. .- -. ... .-.. .- - .. -. --. / - . -..- - / - --- / -- --- .-. ... . / -.-. --- -.. . .-.-.-"
-          typeSpeed={100}
-          eraseSpeed={100}
-        />
+        {!isVisible && (
+          <TypeWriterEffect
+            textStyle={{
+              color: "#fff",
+              fontWeight: 500,
+              fontSize: "1.5em",
+            }}
+            startDelay={100}
+            cursorColor="white"
+            text=".- / ... .. - . / ..-. --- .-. / - .-. .- -. ... .-.. .- - .. -. --. / - . -..- - / - --- / -- --- .-. ... . / -.-. --- -.. . .-.-.-"
+            typeSpeed={100}
+            eraseSpeed={100}
+          />
+        )}
 
         {!isVisible && (
-        <button
-          onClick={() => setIsVisible(!isVisible)}
-          className="bg-transparent text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-black rounded mt-3"
-        >
-          Begin
-        </button>
+          <button
+            onClick={() => setIsVisible(!isVisible)}
+            className="bg-transparent text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-black rounded mt-3"
+          >
+            Begin
+          </button>
         )}
 
         {isVisible && (
