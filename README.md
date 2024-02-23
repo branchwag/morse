@@ -1,5 +1,8 @@
 # Morse
 
+![image](https://github.com/branchwag/morse/assets/29187461/aa75061f-a28a-49e5-bcca-855cef41ffb6)
+
+
 ## Description
 
 UNDER CONSTRUCTION - This readme is a placeholder template for now but I plan on filling it in once I pin down this idea. ;D
