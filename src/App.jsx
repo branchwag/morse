@@ -4,6 +4,10 @@ import TypeWriterEffect from "react-typewriter-effect";
 function App() {
   const [isVisible, setIsVisible] = useState(false);
 
+  function handleSubmit() {
+    console.log("Submitted!");
+  }
+
   return (
     <>
       <div className="flex flex-col justify-center items-center w-screen h-screen px-8">
@@ -62,7 +66,10 @@ function App() {
               ></input>
             </div>
 
-            <button className="bg-transparent text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-black rounded">
+            <button
+              onClick={handleSubmit}
+              className="bg-transparent text-white-700 font-semibold py-2 px-4 border border-white-500 hover:bg-black rounded"
+            >
               Submit
             </button>
           </div>
