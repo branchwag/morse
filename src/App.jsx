@@ -26,14 +26,13 @@ function App() {
         //console.log(value[character]);
         //console.log(typeof value[character]);
 
+        //If char is not in json, return nothing
+        //if value[character] is undefined then return nothing
         if (typeof value[character] == "undefined") {
           //console.log("Hey this character is undefined");
         } else {
           morseCodeString += value[character.toLowerCase()];
         }
-
-        //need to add functionality above where if char is not in json, return nothing
-        //if value[character] is undefined then return nothing
 
         //create new element on page with output using typewriter effect
         setMorseOutputDiv(
