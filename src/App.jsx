@@ -24,7 +24,13 @@ function App() {
       var jsonData = Promise.resolve(jsonFile);
       jsonData.then((value) => {
         //console.log(value[character]);
-        morseCodeString += value[character.toLowerCase()];
+        //console.log(typeof value[character]);
+
+        if (typeof value[character] == "undefined") {
+          //console.log("Hey this character is undefined");
+        } else {
+          morseCodeString += value[character.toLowerCase()];
+        }
 
         //need to add functionality above where if char is not in json, return nothing
         //if value[character] is undefined then return nothing
