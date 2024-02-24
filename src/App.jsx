@@ -16,13 +16,18 @@ function App() {
 
     //TAKE TEXT AND TRANSLATE
     //for character in string, take each character and figure out what its morse equivalent is
+
     for (let i = 0; i < val.length; i++) {
       const character = val[i];
 
       //look in json for value
       var jsonData = Promise.resolve(jsonFile);
       jsonData.then((value) => {
-        morseCodeString += value[character];
+        //console.log(value[character]);
+        morseCodeString += value[character.toLowerCase()];
+
+        //need to add functionality above where if char is not in json, return nothing
+        //if value[character] is undefined then return nothing
 
         //create new element on page with output using typewriter effect
         setMorseOutputDiv(
