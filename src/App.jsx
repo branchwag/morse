@@ -8,6 +8,9 @@ function App() {
   const [morseOutputDiv, setMorseOutputDiv] = useState(<div></div>);
 
   function handleSubmit() {
+    //if user submitted previously, we need to set the output div back to original state
+    setMorseOutputDiv(<div></div>);
+
     //sets empty thing to put our translation in
     var morseCodeString = "";
 
@@ -22,7 +25,6 @@ function App() {
         morseCodeString += value[character];
 
         //create new element on page with output using typewriter effect
-
         setMorseOutputDiv(
           <div>
             <TypeWriterEffect
