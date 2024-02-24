@@ -5,25 +5,36 @@ var jsonFile = import("../morse-code.json");
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [val, setVal] = useState("");
+  const [morseOutput, setMorseOutput] = useState("");
 
   function handleSubmit() {
     console.log("Submitted!");
     console.log(val);
 
+    //sets empty thing to put our translation in
+    var morseCodeString = "";
+
     //TAKE TEXT AND TRANSLATE
     //for character in string, take each character and figure out what its morse equivalent is
     for (let i = 0; i < val.length; i++) {
       const character = val[i];
-      console.log(character);
+      //console.log(character);
+
       //look in json for value
-      //checking to make sure we can reach json file
       var jsonData = Promise.resolve(jsonFile);
       jsonData.then((value) => {
-        console.log(value[character]);
+        morseCodeString += value[character];
+
+        console.log(morseCodeString);
+
+        setMorseOutput(morseCodeString);
+
+        //console.log(morseCodeAdd);
+        //console.log(morseCodeAdd.length);
+
+        //create new element on page with output using typewriter effect
       });
     }
-
-    //create new element on page with output using typewriter effect
   }
 
   const change = (event) => {
@@ -96,6 +107,12 @@ function App() {
             >
               Submit
             </button>
+            <div>
+              <p className="mt-3">
+                Morse Code: <br></br>
+                {morseOutput}
+              </p>
+            </div>
           </div>
         )}
       </div>
