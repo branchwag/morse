@@ -3,10 +3,18 @@ import TypeWriterEffect from "react-typewriter-effect";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [val, setVal] = useState("");
 
   function handleSubmit() {
     console.log("Submitted!");
+    console.log(val);
+
+    //take text and translate
   }
+
+  const change = (event) => {
+    setVal(event.target.value);
+  };
 
   return (
     <>
@@ -60,6 +68,8 @@ function App() {
                 Input text
               </label>
               <input
+                value={val}
+                onChange={change}
                 type="text"
                 id="large-input"
                 className="block w-full p-4 text-gray-900 border border-black rounded-lg bg-slate-200 text-base focus:border-black-500"
