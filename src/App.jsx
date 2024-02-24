@@ -5,13 +5,9 @@ var jsonFile = import("../morse-code.json");
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [val, setVal] = useState("");
-  //const [morseOutput, setMorseOutput] = useState("");
   const [morseOutputDiv, setMorseOutputDiv] = useState(<div></div>);
 
   function handleSubmit() {
-    //console.log("Submitted!");
-    //console.log(val);
-
     //sets empty thing to put our translation in
     var morseCodeString = "";
 
@@ -19,16 +15,11 @@ function App() {
     //for character in string, take each character and figure out what its morse equivalent is
     for (let i = 0; i < val.length; i++) {
       const character = val[i];
-      //console.log(character);
 
       //look in json for value
       var jsonData = Promise.resolve(jsonFile);
       jsonData.then((value) => {
         morseCodeString += value[character];
-
-        //console.log(morseCodeString);
-
-        //setMorseOutput(morseCodeString);
 
         //create new element on page with output using typewriter effect
 
@@ -125,7 +116,6 @@ function App() {
             <div>
               <p className="mt-10">
                 Morse Code: <br></br>
-                {/* {morseOutput} */}
               </p>
               {morseOutputDiv}
             </div>
