@@ -5,11 +5,12 @@ var jsonFile = import("../morse-code.json");
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [val, setVal] = useState("");
-  const [morseOutput, setMorseOutput] = useState("");
+  //const [morseOutput, setMorseOutput] = useState("");
+  const [morseOutputDiv, setMorseOutputDiv] = useState(<div></div>);
 
   function handleSubmit() {
-    console.log("Submitted!");
-    console.log(val);
+    //console.log("Submitted!");
+    //console.log(val);
 
     //sets empty thing to put our translation in
     var morseCodeString = "";
@@ -25,14 +26,28 @@ function App() {
       jsonData.then((value) => {
         morseCodeString += value[character];
 
-        console.log(morseCodeString);
+        //console.log(morseCodeString);
 
-        setMorseOutput(morseCodeString);
-
-        //console.log(morseCodeAdd);
-        //console.log(morseCodeAdd.length);
+        //setMorseOutput(morseCodeString);
 
         //create new element on page with output using typewriter effect
+
+        setMorseOutputDiv(
+          <div>
+            <TypeWriterEffect
+              textStyle={{
+                color: "#fff",
+                fontWeight: 500,
+                fontSize: "2em",
+              }}
+              startDelay={100}
+              cursorColor="white"
+              text={morseCodeString}
+              typeSpeed={100}
+              eraseSpeed={100}
+            />
+          </div>
+        );
       });
     }
   }
@@ -108,10 +123,11 @@ function App() {
               Submit
             </button>
             <div>
-              <p className="mt-3">
+              <p className="mt-10">
                 Morse Code: <br></br>
-                {morseOutput}
+                {/* {morseOutput} */}
               </p>
+              {morseOutputDiv}
             </div>
           </div>
         )}
