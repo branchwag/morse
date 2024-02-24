@@ -115,7 +115,7 @@ function App() {
                 onChange={change}
                 type="text"
                 id="large-input"
-                className="block w-full p-4 text-gray-900 border border-black rounded-lg bg-slate-200 text-base focus:border-black-500"
+                className="block w-full max-w-7xl p-4 text-gray-900 border border-black rounded-lg bg-slate-200 text-base focus:border-black-500"
               ></input>
             </div>
 
