@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TypeWriterEffect from "react-typewriter-effect";
+var jsonFile = import("../morse-code.json");
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +10,20 @@ function App() {
     console.log("Submitted!");
     console.log(val);
 
-    //take text and translate
+    //TAKE TEXT AND TRANSLATE
+    //for character in string, take each character and figure out what its morse equivalent is
+    for (let i = 0; i < val.length; i++) {
+      const character = val[i];
+      console.log(character);
+      //look in json for value
+      //checking to make sure we can reach json file
+      var jsonData = Promise.resolve(jsonFile);
+      jsonData.then((value) => {
+        console.log(value[character]);
+      });
+    }
+
+    //create new element on page with output using typewriter effect
   }
 
   const change = (event) => {
